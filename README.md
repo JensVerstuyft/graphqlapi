@@ -12,3 +12,36 @@ node src/index.js
 
 
 Your api will now be available on the following url: http://localhost:4000/
+
+## Example query:
+```
+query {
+  location(lat: 51.0543 lon: 3.7174) {
+    lat
+    lon
+    timezone
+    timezone_offset
+    current {
+      dt
+      sunrise
+      sunset
+      temp
+      feels_like
+      pressure
+      humidity
+      dew_point
+      uvi
+      clouds
+      visibility
+      wind_speed
+      wind_deg
+      weather {
+        id
+				main
+        description
+        icon
+      }
+    }
+  }
+}
+```
