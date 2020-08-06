@@ -37,7 +37,7 @@ query {
       wind_deg
       weather {
         id
-				main
+		main
         description
         icon
       }
