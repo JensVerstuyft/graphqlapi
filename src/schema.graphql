@@ -11,7 +11,7 @@ type Location {
 }
 
 type CurrentWeather {
-	dt: Int
+    dt: Int
     sunrise: Int
     sunset: Int
     temp: Float
@@ -28,7 +28,7 @@ type CurrentWeather {
 }
 
 type Weather {
-	id: Int
+    id: Int
     main: String
     description: String
     icon: String
