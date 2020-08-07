@@ -5,15 +5,16 @@ const baseURL = 'https://api.openweathermap.org/data/2.5/onecall?exclude=hourly,
 
 const resolvers = {
   Query: {
-    location: (parent, args) => {
-    	let url = baseURL+'&lat='+args.lat+'&lon='+args.lon;
-      	let weather = fetch(url).then(res => res.json());
-      	return weather;
-    }
+    location: async (parent, args) => await getWeatherData(args.lat, args.lon)
   }
 }
 
-// 3
+function getWeatherData(lat, lon) {
+	let url = baseURL+'&lat='+lat+'&lon='+lon;
+  	let weather = fetch(url).then(res => res.json());
+  	return weather;
+}
+
 const server = new GraphQLServer({
   typeDefs: './src/schema.graphql',
   resolvers,
